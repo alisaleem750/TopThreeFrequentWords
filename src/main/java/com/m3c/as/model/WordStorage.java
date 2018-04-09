@@ -58,6 +58,8 @@ public class WordStorage {
         for(int i = 0; i<result.length;i++){
             if(i < temp.length) {
                 result[i] = temp[i].toString();
+            } else {
+                result[i] = "Word number " + i + " not found";
             }
         }
         return result;
