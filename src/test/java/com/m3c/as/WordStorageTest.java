@@ -5,6 +5,9 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+/**
+ * Test class to test the WordStorage class.
+ */
 public class WordStorageTest {
 
     WordStorage wordStorage;
@@ -14,6 +17,9 @@ public class WordStorageTest {
         wordStorage = new WordStorage();
     }
 
+    /**
+     * Tests if a single word is added correctly.
+     */
     @Test
     public void addWordTest() {
         String test = "hello";
@@ -22,6 +28,9 @@ public class WordStorageTest {
         assertTrue(wordStorage.hasWord(test));
     }
 
+    /**
+     * Tests if multiple words are added correctly.
+     */
     @Test
     public void addWordsTest(){
         String testList = "hi, hello, hey, goodbye";
@@ -31,6 +40,9 @@ public class WordStorageTest {
         assertEquals(4, wordStorage.getWordsMapSize());
     }
 
+    /**
+     * Tests whether a word is found or not in the wordStorage dictionary (HashMap)
+     */
     @Test
     public void hasWordTest(){
         String test = "hello";
@@ -39,6 +51,9 @@ public class WordStorageTest {
         assertTrue(wordStorage.hasWord(test));
     }
 
+    /**
+     * Tests if the count of words inside the HashMap is returned correctly. (no duplicates)
+     */
     @Test
     public void getWordsMapSizeTest(){
         assertEquals(0, wordStorage.getWordsMapSize());
@@ -50,6 +65,9 @@ public class WordStorageTest {
         assertEquals(2, wordStorage.getWordsMapSize());
     }
 
+    /**
+     * Tests if the amount of times a word has been entered into the HashMap is being stored correctly.
+     */
     @Test
     public void getWordCountTest(){
         assertEquals(0, wordStorage.getWordCount("hi"));
@@ -63,6 +81,9 @@ public class WordStorageTest {
         assertEquals(4, wordStorage.getWordCount("hi"));
     }
 
+    /**
+     * Tests that the topNWords function is returning the 3 words with the highest values in the HashMap.
+     */
     @Test
     public void getTopNWordsTest(){
         String words = "hi, HI, hI, Hi, hello, hello, hello, goodbye, goodbye, bye";
